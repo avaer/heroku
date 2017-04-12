@@ -13,6 +13,14 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
+app.get('/env.json', function(request, response) {
+  response.json(process.env);
+});
+
+app.get('/headers.json', function(request, response) {
+  response.json(request.headers);
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
